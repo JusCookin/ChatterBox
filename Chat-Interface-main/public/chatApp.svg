@@ -1,0 +1,83 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="bubble1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f9ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="bubble2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="15" flood-color="#4facfe" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="bubbleShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main icon background -->
+  <rect x="20" y="20" width="160" height="160" rx="35" ry="35" 
+        fill="url(#iconGradient)" 
+        filter="url(#shadow)"/>
+  
+  <!-- Chat bubble 1 (left/top) -->
+  <rect x="55" y="70" width="50" height="35" rx="18" ry="18" 
+        fill="url(#bubble1Gradient)" 
+        filter="url(#bubbleShadow)"/>
+  
+  <!-- Chat bubble 1 tail -->
+  <polygon points="65,105 75,105 70,115" 
+           fill="url(#bubble1Gradient)"/>
+  
+  <!-- Chat bubble 2 (right/bottom) -->
+  <rect x="95" y="95" width="55" height="32" rx="16" ry="16" 
+        fill="url(#bubble2Gradient)" 
+        filter="url(#bubbleShadow)"/>
+  
+  <!-- Chat bubble 2 tail -->
+  <polygon points="135,95 145,95 140,85" 
+           fill="url(#bubble2Gradient)"/>
+  
+  <!-- Typing dots in bubble 1 -->
+  <circle cx="70" cy="87" r="3" fill="#4facfe" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="80" cy="87" r="3" fill="#4facfe" opacity="0.6">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="90" cy="87" r="3" fill="#4facfe" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Typing dots in bubble 2 -->
+  <circle cx="110" cy="111" r="3" fill="rgba(255,255,255,0.9)" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="111" r="3" fill="rgba(255,255,255,0.9)" opacity="0.6">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="130" cy="111" r="3" fill="rgba(255,255,255,0.9)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Subtle highlight overlay -->
+  <rect x="20" y="20" width="160" height="160" rx="35" ry="35" 
+        fill="url(#highlightGradient)" 
+        opacity="0.1"/>
+  
+  <defs>
+    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+</svg>

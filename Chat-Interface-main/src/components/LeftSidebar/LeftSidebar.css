@@ -1,0 +1,325 @@
+/* Enhanced Left Sidebar Styles */
+
+.ls {
+    background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+    color: white;
+    height: 85vh;
+    position: relative;
+    border-radius: 24px 0 0 24px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+
+/* Add subtle pattern overlay */
+
+.ls::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ls-top {
+    padding: 24px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.ls-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ls-nav .side-logo {
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    transition: all 0.3s ease;
+}
+
+.ls-nav .side-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.ls-nav .menu img {
+    height: 22px;
+    min-height: 12px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    filter: brightness(1.2);
+}
+
+.ls-nav .menu img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+.ls-search {
+    background: linear-gradient(135deg, #3730a3 0%, #4338ca 100%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ls-search::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.ls-search:hover::before {
+    left: 100%;
+}
+
+.ls-search:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #5b21b6 100%);
+    box-shadow: 0 4px 20px rgba(67, 56, 202, 0.3);
+    transform: translateY(-1px);
+}
+
+.ls-search img {
+    width: 18px;
+    opacity: 0.9;
+    filter: brightness(1.2);
+}
+
+.ls-search input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 400;
+}
+
+.ls-search input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.ls-list {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    overflow-y: auto;
+    padding: 8px 0;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Custom scrollbar */
+
+.ls-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.ls-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ls-list::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.6);
+    border-radius: 4px;
+}
+
+.ls-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.8);
+}
+
+.friends img {
+    width: 44px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.friends {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 20px 20px 0;
+    margin: 2px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.friends::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.friends div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.friends span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 300;
+}
+
+.friends:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+}
+
+.friends:hover::before {
+    width: 4px;
+}
+
+.friends:hover span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.friends:hover img {
+    transform: scale(1.05);
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.ls-nav .menu {
+    position: relative;
+    padding: 12px 8px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.ls-nav .menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 160px;
+    padding: 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+    animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-menu hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 12px 0;
+}
+
+.sub-menu p {
+    cursor: pointer;
+    font-size: 13px;
+    padding: 8px 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.sub-menu p:hover {
+    background: rgba(139, 92, 246, 0.3);
+    color: white;
+    transform: translateX(4px);
+}
+
+.menu:hover .sub-menu {
+    display: block;
+}
+
+.friends.border img {
+    border: 3px solid #06ffa5;
+    box-shadow: 0 0 20px rgba(6, 255, 165, 0.4);
+    animation: activePulse 2s infinite;
+}
+
+@keyframes activePulse {
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(6, 255, 165, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(6, 255, 165, 0.6);
+    }
+}
+
+.friends.border div span {
+    color: #06ffa5;
+    font-weight: 500;
+}
+
+.friends.border {
+    background: rgba(6, 255, 165, 0.1);
+    border-left: 4px solid #06ffa5;
+}
+
+
+/* Add subtle glow effect to active friend */
+
+.friends.border::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: linear-gradient(180deg, transparent, #06ffa5, transparent);
+    border-radius: 2px;
+}
